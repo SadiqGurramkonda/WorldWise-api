@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(
   cors({
-      origin: "https://worldwise-api-vue7.onrender.com",
+      origin: "https://world-wise-three-topaz.vercel.app",
       credentials: true,
   })
 );
