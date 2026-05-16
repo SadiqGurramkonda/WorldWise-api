@@ -3,7 +3,6 @@ const AppError = require("../utilities/appError");
 const catchAsync = require("../utilities/catchAsync");
 
 exports.createCity = catchAsync(async(req,res,next)=>{
-    // console.log(req.currentUser);
 
     if(!req.currentUser._id){
         next(new AppError("You are not logged in, please login to get access",401));

@@ -6,7 +6,7 @@ dotenv.config({path:"./config.env"});
 const mongooseURL = process.env.DB_URL.replace("<DB_PASSWORD>",process.env.DB_PASSWORD);
 mongoose.connect(mongooseURL).then(()=>{
     console.log("DB Connected...")
-}).catch(err=>console.log(err));
+}).catch(err=>console.log("Mongo Error occured..."+err));
 
 
 
