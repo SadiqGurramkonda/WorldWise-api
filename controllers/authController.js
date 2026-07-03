@@ -26,15 +26,14 @@ exports.signup = catchAsync(async (req, res, next) => {
   const token = signToken(user._id);
 
   res.cookie("token", token, {
-    expires: new Date(Date.now() + 1000),
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    secure: true,
     httpOnly: true,
+    sameSite: "Lax",
   });
 
   res.status(201).json({
-    status: "sucess",
-    data: {
-      token,
-    },
+    status: "success",
   });
 });
 
