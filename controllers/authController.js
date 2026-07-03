@@ -29,7 +29,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
     secure: true,
     httpOnly: true,
-    sameSite: "Lax",
+    sameSite: "none",
   });
 
   res.status(201).json({
@@ -53,7 +53,7 @@ exports.login = catchAsync(async (req, res, next) => {
     maxAge: 30 * 24 * 60 * 60 * 1000,
     secure: false,
     httpOnly: true,
-    sameSite: "Lax",
+    sameSite: "none",
   });
   res.status(200).json({
     status: "sucess",
@@ -67,7 +67,7 @@ exports.logout = catchAsync(async (req, res) => {
     expires: new Date(Date.now()),
     secure: false,
     httpOnly: true,
-    sameSite: "Lax",
+    sameSite: "none",
   });
   res
     .status(200)
